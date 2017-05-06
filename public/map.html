@@ -20,6 +20,16 @@
             font-family:"Times New Roman",Georgia,Serif
         }
 
+        button {
+            border-radius: 3px;
+            background: rgb(51, 122, 190);
+            border-color: rgb(60, 133, 200);
+        }
+
+        input {
+            border-radius: 5px;
+        }
+
         #top>span {
             color: #fff;
             line-height: 35px;
@@ -45,7 +55,7 @@
             line-height: 50px;
             color: white;
         }
-        
+
         #chart {
             height: 280px;
             width: 900px;
@@ -74,6 +84,8 @@
         <input type="date" name="startTime" value="2014-04-01">
         <label for="endTime">结束时间：</label>
         <input type="date" name="endTime" value="2014-05-31">
+        <!--<input type="submit" value="搜索"/>-->
+        <button type="button">搜索</button>
     </div>
     <div id="chart">
 
@@ -82,6 +94,7 @@
     <script src="/javascripts/initMap.js"></script>
     <script src="/javascripts/initChart.js"></script>
     <script src="/javascripts/DateFormat.js"></script>
+    <script src="/javascripts/form.js"></script>
 </body>
 
 </html>
