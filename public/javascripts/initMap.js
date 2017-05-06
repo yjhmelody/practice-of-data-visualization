@@ -36,5 +36,4 @@ function initMap(e) {
     map.addControl(mapTypeControl);
 
     //map绑定事件
-
 }
