@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Hello, World</title>
+    <title>Hello World</title>
     <style type="text/css">
         html {
             height: 100%;
@@ -17,11 +17,11 @@
             margin: 0px;
             padding: 0px;
             border: 0px;
-            font-family:"Times New Roman",Georgia,Serif
+            font-family: "Times New Roman", Georgia, Serif
         }
 
         button {
-            border-radius: 3px;
+            border-radius: 5px;
             background: rgb(51, 122, 190);
             border-color: rgb(60, 133, 200);
         }
@@ -47,13 +47,17 @@
             border-radius: 20px;
         }
 
-        .form {
+        #middle {
             background: rgb(41, 60, 81);
             width: auto;
             height: 50px;
             /*border-radius: 5px;*/
             line-height: 50px;
+        }
+
+        .form {
             color: white;
+            margin: 0 auto;
         }
 
         #chart {
@@ -69,7 +73,7 @@
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="http://cdn.cdnjs.net/echarts/3.2.3/echarts.min.js"></script>
-    
+
 </head>
 
 <body>
@@ -79,13 +83,15 @@
     <div id="container">
 
     </div>
-    <div class="form">
-        <label for="startTime">开始时间：</label>
-        <input type="date" name="startTime" value="2014-04-01">
-        <label for="endTime">结束时间：</label>
-        <input type="date" name="endTime" value="2014-05-31">
-        <!--<input type="submit" value="搜索"/>-->
-        <button type="button">搜索</button>
+    <div id="middle">
+        <div class="form">
+            <label for="startTime">开始时间：</label>
+            <input type="date" name="startTime" value="2014-04-01">
+            <label for="endTime">结束时间：</label>
+            <input type="date" name="endTime" value="2014-05-31">
+            <!--<input type="submit" value="搜索"/>-->
+            <button type="button">搜索</button>
+       </div>
     </div>
     <div id="chart">
 
