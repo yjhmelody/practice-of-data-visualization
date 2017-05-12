@@ -1,5 +1,6 @@
 {
-    "station_name": "中北桥东",
+    "stationName": "中北桥东",
+    "stationID":1234,
     "rental": [{
             "rentalnum": 10,
             "date": 124242424422

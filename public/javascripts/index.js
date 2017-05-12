@@ -5,17 +5,10 @@ window.addEventListener('load', function () {
         [116.412222, 39.912345, "地址：北京市东城区正义路甲5号"]
     ];
 
-    var opts = {
-        width: 250,
-        height: 100,
-        title: '站点信息',
-        enableMessage: true
-    }
-
     // 实例化地图
     var map = new MyMap("container");
     map.init();
-    map.drawMarkers(data_info, opts);
+    map.drawMarkers(data_info, infoWindowOptions);
 
     // 实例化图表
     var chart = new MyChart("chart", chartOptions);

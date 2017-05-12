@@ -1,3 +1,10 @@
+var infoWindowOptions = {
+    width: 250, // 信息窗口宽度
+    height: 80, // 信息窗口高度
+    title: "信息窗口", // 信息窗口标题
+    enableMessage: true //设置允许信息窗发送短息
+};
+
 /**
  * 
  * @class 
@@ -7,9 +14,11 @@
 function MyMap(id) {
     this.id = id
 }
-
+/**
+ *  init the map
+ */
 MyMap.prototype.init = function init() {
-    var map = new BMap.Map("container"); // 创建地图实例  
+    var map = new BMap.Map(this.id); // 创建地图实例  
     var point = new BMap.Point(116.404, 39.915); // 创建点坐标  
     map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别 
     //初始化控件
@@ -49,7 +58,7 @@ MyMap.prototype.init = function init() {
 /**
  * 
  * 
- * @param {any} data 坐标等数据
+ * @param {any} data 坐标相关数据
  */
 MyMap.prototype.drawMarkers = function (data) {
     for (var i = 0; i < data.length; i++) {
@@ -65,13 +74,6 @@ MyMap.prototype.drawMarkers = function (data) {
     }
 }
 
-var infoWindowOptions = {
-    width: 250, // 信息窗口宽度
-    height: 80, // 信息窗口高度
-    title: "信息窗口", // 信息窗口标题
-    enableMessage: true //设置允许信息窗发送短息
-};
-
 /**
  * 
  * @param {any} content 信息窗口内容 
@@ -84,3 +86,4 @@ MyMap.prototype.openInfo = function (content, e) {
     // 根据Point和InfoWindow开启
     this.map.openInfoWindow(infoWindow, point)
 }
+

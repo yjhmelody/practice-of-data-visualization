@@ -31,12 +31,15 @@ var chartOptions = {
         }
     },
     grid: {
-        left: '3%',
-        right: '4%',
+        left: '5%',
+        right: '5%',
         bottom: '3%',
-        containLabel: true
+        containLabel: true,
+        // show: true
     },
     xAxis: [{
+        // position: 'top',
+        name: '日期',
         type: 'category',
         boundaryGap: false,
         axisLabel: {
@@ -46,6 +49,7 @@ var chartOptions = {
         data: []
     }],
     yAxis: [{
+        name: '租还量',
         type: 'value'
     }],
     series: [{
@@ -124,7 +128,7 @@ MyChart.prototype.getData = function () {
                 boundaryGap: false,
                 axisLabel: {
                     interval: 0,
-                    rotate: -10
+                    rotate: 0
                 },
                 data: dates
             }],
