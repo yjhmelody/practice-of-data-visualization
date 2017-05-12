@@ -13,5 +13,5 @@ window.addEventListener('load', function () {
     // 实例化图表
     var chart = new MyChart("chart", chartOptions);
     chart.init();
-    chart.getData();
+    // chart.getData();
 });

@@ -97,21 +97,22 @@ function MyChart(id, opts) {
     this.id = id
     this.opts = opts
 }
-
+/**
+ * set some configs
+ */
 MyChart.prototype.init = function () {
     this.chart = echarts.init(document.getElementById(this.id));
     // 指定图表的配置项和数据
     this.chart.setOption(this.opts);
-    this.getData();
 }
 
 /**
  * get the data and update chart
  */
-MyChart.prototype.getData = function () {
+MyChart.prototype.getData = function (url) {
     // 绑定当前作用域
     var that = this;
-    $.get('test/data2.json').done(function (data) {
+    $.get(url).done(function (data) {
         // 填入数据        
         var dates = [];
         var rentalnum = [];
@@ -121,7 +122,7 @@ MyChart.prototype.getData = function () {
             rentalnum.push(data.rental[i].rentalnum);
             returnnum.push(data.return[i].returnnum);
         }
-        
+
         that.chart.setOption({
             xAxis: [{
                 type: 'category',
