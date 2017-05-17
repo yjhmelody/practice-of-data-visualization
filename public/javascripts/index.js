@@ -8,10 +8,13 @@ window.addEventListener('load', function () {
     // 实例化地图
     var map = new MyMap("container");
     map.init();
-    map.drawMarkers(data_info, infoWindowOptions);
+    map.setMarkers(data_info, 'click', function(e){
+        chart.getData("test/data2.json");
+        // test
+        console.log('回调测试')
+    });
 
     // 实例化图表
     var chart = new MyChart("chart", chartOptions);
     chart.init();
-    // chart.getData();
 });

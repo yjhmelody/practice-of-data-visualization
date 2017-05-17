@@ -59,8 +59,14 @@ MyMap.prototype.init = function init() {
  * 
  * 
  * @param {any} data 坐标相关数据
+ * @param {string} event 事件名称
+ * @param {function}callback 事件回调
  */
-MyMap.prototype.drawMarkers = function (data) {
+
+MyMap.prototype.setMarkers = function (data, event, callback) {
+    if (typeof data != 'object') {
+        throw TypeError("类型错误")
+    }
     for (var i = 0; i < data.length; i++) {
         // 根据data创建相应的标注
         var marker = new BMap.Marker(new BMap.Point(data[i][0], data[i][1]))
@@ -71,6 +77,13 @@ MyMap.prototype.drawMarkers = function (data) {
         marker.addEventListener('click', function (e) {
             that.openInfo(content, e)
         })
+        if (arguments.length === 3) {
+            if (typeof event === 'string' && typeof callback === 'function') {
+                marker.addEventListener(event, callback)
+            } else {
+                throw new TypeError("类型错误")
+            }
+        }
     }
 }
 
@@ -86,4 +99,3 @@ MyMap.prototype.openInfo = function (content, e) {
     // 根据Point和InfoWindow开启
     this.map.openInfoWindow(infoWindow, point)
 }
-
