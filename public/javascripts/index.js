@@ -5,16 +5,27 @@ window.addEventListener('load', function () {
         [116.412222, 39.912345, "地址：北京市东城区正义路甲5号"]
     ];
 
-    // 实例化地图
     var map = new MyMap("container");
     map.init();
-    map.setMarkers(data_info, 'click', function(e){
-        chart.getData("test/data2.json");
-        // test
-        console.log('回调测试')
-    });
-
-    // 实例化图表
     var chart = new MyChart("chart", chartOptions);
     chart.init();
+    // chart.getData("test/data2.json");
+    // 加载时候获取所有点的坐标跟名称
+    // url根据id返回经纬度
+    var coords = [];
+    $.get('test/data.json').done(function (data) {
+        coords = data;
+        console.log(data);
+        //拿到坐标数据后设置Markers
+        map.setMarkers(coords, 'click', function (e) {
+            //加载相应的租还量数据url
+            // 准备Promise化
+            $.get('test/data2.json').done(function(data){
+                chart.update(data);
+                console.log(data);
+            })
+            // test
+            console.log('回调测试')
+        });
+    })
 });

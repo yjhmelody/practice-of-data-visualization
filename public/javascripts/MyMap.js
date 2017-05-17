@@ -7,12 +7,17 @@ var infoWindowOptions = {
 
 /**
  * 
- * @class 
- * @param {any} id 
+ * @class MyMap
+ * @param {string} id 
  */
 
 function MyMap(id) {
-    this.id = id
+    if(typeof id === 'string'){
+        this.id = id
+    }
+    else{
+        throw TypeError("id类型错误")
+    }
 }
 /**
  *  init the map
@@ -77,6 +82,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
         marker.addEventListener('click', function (e) {
             that.openInfo(content, e)
         })
+        // 给Marker添加回调
         if (arguments.length === 3) {
             if (typeof event === 'string' && typeof callback === 'function') {
                 marker.addEventListener(event, callback)

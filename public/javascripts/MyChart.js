@@ -88,8 +88,7 @@ var chartOptions = {
 };
 
 /**
- * 
- * Class MyChart
+ * @class MyChart
  * @param {any} id 
  * @param {any} opts 
  */
@@ -109,39 +108,42 @@ MyChart.prototype.init = function () {
 /**
  * get the data and update chart
  */
-MyChart.prototype.getData = function (url) {
+MyChart.prototype.update = function (data) {
     // 绑定当前作用域
     var that = this;
-    $.get(url).done(function (data) {
-        // 填入数据        
-        var dates = [];
-        var rentalnum = [];
-        var returnnum = [];
-        for (var i = 0; i < data.rental.length; i++) {
-            dates.push(data.rental[i].date);
-            rentalnum.push(data.rental[i].rentalnum);
-            returnnum.push(data.return[i].returnnum);
-        }
+    // 填入数据        
+    var dates = [];
+    var rentalnum = [];
+    var returnnum = [];
+    for (var i = 0; i < data.rental.length; i++) {
+        dates.push(data.rental[i].date);
+        rentalnum.push(data.rental[i].rentalnum);
+        returnnum.push(data.return[i].returnnum);
+    }
 
-        that.chart.setOption({
-            xAxis: [{
-                type: 'category',
-                boundaryGap: false,
-                axisLabel: {
-                    interval: 0,
-                    rotate: 0
-                },
-                data: dates
-            }],
-            series: [{
-                    name: '租车量',
-                    data: rentalnum
-                },
-                {
-                    name: '还车量',
-                    data: returnnum
-                }
-            ]
-        })
+    that.chart.setOption({
+        xAxis: [{
+            type: 'category',
+            boundaryGap: false,
+            axisLabel: {
+                interval: 0,
+                rotate: 0
+            },
+            data: dates
+        }],
+        series: [{
+                name: '租车量',
+                data: rentalnum
+            },
+            {
+                name: '还车量',
+                data: returnnum
+            }
+        ]
     })
 };
+
+
+// $.get(url).done(function (data) {
+
+// })
