@@ -12,50 +12,29 @@ window.addEventListener('load', function () {
     // chart.getData("test/data2.json");
     // 加载时候获取所有点的坐标跟名称
     // url根据id返回经纬度
-    var coords = [];
-
-
-
     new Promise((res, rej) => {
             $.get('test/data.json').done((data) => {
-                res(data);
-            });
+                res(data)
+            })
         })
         .then((data) => {
-            console.log('promise', data);
+            console.log('promise', data)
             // 缓存数据
             (function () {
                 var cache
                 map.setMarkers(data, 'click', (e) => {
                     if (cache != null) {
                         chart.update(cache)
-                        console.log('cache', cache)
+                        // console.log('cache', cache)
                         return
                     }
+
                     $.get('test/data2.json').done((data) => {
-                        chart.update(data);
-                        cache = data;
-                        console.log('data', data)
+                        chart.update(data)
+                        cache = data
+                        // console.log('data', data)
                     })
                 })
             })()
         })
-
-
-
-    //     $.get('test/data.json').done(function (data) {
-    //         coords = data;
-    //         console.log(data);
-    //         //拿到坐标数据后设置Markers
-    //         map.setMarkers(coords, 'click', function (e) {
-    //             //加载相应的租还量数据url
-    //             // 准备Promise化
-    //             $.get('test/data2.json').done(function (data) {
-    //                 chart.update(data);
-    //                 console.log(data);
-    //             })
-    //             // test
-    //             console.log('回调测试')
-    //         });
-    //     })
 });
