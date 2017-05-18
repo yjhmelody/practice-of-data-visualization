@@ -118,6 +118,10 @@ MyChart.prototype.update = function (data) {
     var dates = [];
     var rentalnum = [];
     var returnnum = [];
+    // 增加一些断言
+    if(data.rental.length !== data.return.length){
+        throw Error('数据长度不一致')
+    }
     for (var i = 0; i < data.rental.length; i++) {
         dates.push(data.rental[i].date);
         rentalnum.push(data.rental[i].rentalnum);
