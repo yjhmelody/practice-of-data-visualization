@@ -71,10 +71,29 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     if (typeof data != 'object') {
         throw TypeError("类型错误")
     }
+    var length = data.length
     // 设置Markers同时把视图移动到第一个Marker
     var center = new BMap.Point(data[0].longiTude, data[0].latiTude)
-    this.map.centerAndZoom(center, 14)
-    for (var i = 0; i < data.length; i++) {
+    // 设置视图详细度
+    var level
+    if(length === 1){
+        level = 18
+    }
+    else if(length < 10){
+        level = 17
+    }
+    else if(length < 20){
+        level = 16
+    }
+    else if(length < 30)
+    {
+        level = 15
+    }
+    else{
+        level = 14
+    }
+    this.map.centerAndZoom(center, level)
+    for (var i = 0; i < length; i++) {
         // 根据data创建相应的标注
         var marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))
         // 块级作用域

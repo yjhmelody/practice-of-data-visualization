@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/yjhmelody/practice-of-datavisual.svg?branch=master)](https://travis-ci.org/yjhmelody/practice-of-datavisual)
 
 # 创新实践任务
 
