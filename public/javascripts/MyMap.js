@@ -64,7 +64,7 @@ MyMap.prototype.init = function init() {
  * 
  * @param {any} data 坐标相关数据
  * @param {string} event 事件名称
- * @param {function}callback 事件回调
+ * @param {function} callback 事件回调
  */
 
 MyMap.prototype.setMarkers = function (data, event, callback) {

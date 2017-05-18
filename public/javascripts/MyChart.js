@@ -1,3 +1,6 @@
+/**
+ * 默认图表样式
+ */
 var chartOptions = {
     title: {
         text: '自行车租还量'
@@ -110,7 +113,6 @@ MyChart.prototype.init = function () {
  */
 MyChart.prototype.update = function (data) {
     // 绑定当前作用域
-    // console.log('update');
     var that = this;
     // 填入数据        
     var dates = [];
@@ -143,8 +145,3 @@ MyChart.prototype.update = function (data) {
         ]
     })
 };
-
-
-// $.get(url).done(function (data) {
-
-// })
