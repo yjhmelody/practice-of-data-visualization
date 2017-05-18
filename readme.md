@@ -10,12 +10,11 @@
 
 * 真实数据用java web 连接oracle提供，由其他组员编写
 
-* 
-
-# 使用
+### 使用
 
 下载依赖并运行
-```
+
+```bash
 npm install
 npm start
 ```
