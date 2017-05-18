@@ -3,7 +3,6 @@ window.addEventListener('load', function () {
     map.init();
     var chart = new MyChart("chart", chartOptions);
     chart.init();
-    // chart.getData("test/data2.json");
     // 加载时候获取所有点的坐标跟名称
     // url根据id返回经纬度
     new Promise((res, rej) => {
@@ -12,11 +11,11 @@ window.addEventListener('load', function () {
             })
         })
         .then((data) => {
-            console.log('promise', data)
+            // 设置坐标点
             map.setMarkers(data, 'click', (e) => {
+                var url = '/da/getInfo' + e.target;
                 $.get('test/data2.json').done((data) => {
                     chart.update(data)
-                    console.log('data', data)
                 })
             })
         })

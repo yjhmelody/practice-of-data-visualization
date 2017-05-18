@@ -110,6 +110,7 @@ MyChart.prototype.init = function () {
  */
 MyChart.prototype.update = function (data) {
     // 绑定当前作用域
+    // console.log('update');
     var that = this;
     // 填入数据        
     var dates = [];

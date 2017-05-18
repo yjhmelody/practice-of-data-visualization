@@ -1,7 +1,7 @@
 var infoWindowOptions = {
     width: 250, // 信息窗口宽度
     height: 80, // 信息窗口高度
-    title: "信息窗口", // 信息窗口标题
+    title: "站点信息", // 信息窗口标题
     enableMessage: true //设置允许信息窗发送短息
 };
 
@@ -12,10 +12,9 @@ var infoWindowOptions = {
  */
 
 function MyMap(id) {
-    if(typeof id === 'string'){
+    if (typeof id === 'string') {
         this.id = id
-    }
-    else{
+    } else {
         throw TypeError("id类型错误")
     }
 }
@@ -72,10 +71,15 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     if (typeof data != 'object') {
         throw TypeError("类型错误")
     }
+    // 设置Markers同时把视图移动到第一个Marker
+    var center = new BMap.Point(data[0].longiTude, data[0].latiTude)
+    this.map.centerAndZoom(center, 14)
     for (var i = 0; i < data.length; i++) {
         // 根据data创建相应的标注
-        var marker = new BMap.Marker(new BMap.Point(data[i][0], data[i][1]))
-        var content = data[i][2]
+        var marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))
+        // 块级作用域
+        let content = '站点名：' + data[i].stationName
+        // console.log(content)
         this.map.addOverlay(marker)
         //绑定当前作用域
         var that = this
@@ -99,6 +103,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
  * @param {any} e 事件
  */
 MyMap.prototype.openInfo = function (content, e) {
+
     var p = e.target
     var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat)
     var infoWindow = new BMap.InfoWindow(content, infoWindowOptions)

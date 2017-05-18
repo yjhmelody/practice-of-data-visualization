@@ -1,86 +1,20 @@
 {
-    "stationName": "中北桥东",
-    "stationID":1234,
+    "stationId": 1210,
+    "stationName": "之江路九四五号",
+    "longiTude": 120.213257,
+    "latiTude": 30.237366,
     "rental": [{
-            "rentalnum": 10,
-            "date": 124242424422
-        },
-        {
-            "rentalnum": 15,
-            "date": 124245424422
-        },
-        {
-            "rentalnum": 30,
-            "date": 124247424422
-        },
-        {
-            "rentalnum": 10,
-            "date": 124249424422
-        },
-        {
-            "rentalnum": 10,
-            "date": 124249424422
-        },
-        {
-            "rentalnum": 101,
-            "date": 124249424422
-        },
-        {
-            "rentalnum": 50,
-            "date": 124249424422
-        },
-        {
-            "rentalnum": 20,
-            "date": 124249424422
-        }
-    ],
+        "rentalnum": "88",
+        "date": "2014-03-23"
+    }, {
+        "rentalnum": "336",
+        "date": "2014-03-24"
+    }],
     "return": [{
-            "returnnum": 10,
-            "date": 124242424422
-        },
-        {
-            "returnnum": 11,
-            "date": 124245424422
-        },
-        {
-            "returnnum": 15,
-            "date": 124247424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 4,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 6,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 5,
-            "date": 124249424422
-        },
-        {
-            "returnnum": 23,
-            "date": 124249424422
-        }
-    ]
+        "returnnum": "96",
+        "date": "2014-03-23"
+    }, {
+        "returnnum": "441",
+        "date": "2014-03-24"
+    }]
 }
