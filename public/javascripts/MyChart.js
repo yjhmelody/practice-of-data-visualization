@@ -123,7 +123,7 @@ MyChart.prototype.update = function (data) {
     var rentalnum = [];
     var returnnum = [];
 
-    //显示各个时间段的情况
+    //显示某天的各个时间段的情况
     if (data.rental.length === 1) {
         for (var i = 0; i < data.rental.length; i++) {
             dates.push(data.rental[i].time)
@@ -137,7 +137,8 @@ MyChart.prototype.update = function (data) {
             returnnum.push(data.return[i].returnnum)
         }
     }
-
+    
+    //填充数据
     that.chart.setOption({
         xAxis: [{
             type: 'category',
@@ -146,15 +147,15 @@ MyChart.prototype.update = function (data) {
                 interval: 0,
                 rotate: 0
             },
-            data: dates
+            data: dates //时间
         }],
         series: [{
                 name: '租车量',
-                data: rentalnum
+                data: rentalnum //租车量
             },
             {
                 name: '还车量',
-                data: returnnum
+                data: returnnum //还车量
             }
         ]
     })

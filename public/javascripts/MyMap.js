@@ -76,24 +76,19 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     var center = new BMap.Point(data[0].longiTude, data[0].latiTude)
     // 设置视图详细度
     var level
-    if(length === 1){
+    if (length === 1) {
         level = 18
-    }
-    else if(length < 10){
+    } else if (length < 10) {
         level = 17
-    }
-    else if(length < 20){
+    } else if (length < 20) {
         level = 16
-    }
-    else if(length < 30)
-    {
+    } else if (length < 30) {
         level = 15
-    }
-    else{
+    } else {
         level = 14
     }
     this.map.centerAndZoom(center, level)
-    
+
     for (var i = 0; i < length; i++) {
         // 根据data创建相应的标注
         var marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))
@@ -123,7 +118,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
  * @param {any} e 事件
  */
 MyMap.prototype.openInfo = function (content, e) {
-
+    
     var p = e.target
     var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat)
     var infoWindow = new BMap.InfoWindow(content, infoWindowOptions)
