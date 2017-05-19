@@ -4,29 +4,29 @@
     "longiTude": 120.213257,
     "latiTude": 30.237366,
     "rental": [{
-        "rentalnum": "88",
+        "rentalnum": "18",
         "date": "2014-03-23"
     }, {
-        "rentalnum": "336",
+        "rentalnum": "76",
         "date": "2014-03-24"
     }, {
         "rentalnum": "88",
         "date": "2014-03-25"
     }, {
-        "rentalnum": "336",
+        "rentalnum": "36",
         "date": "2014-03-26"
     }],
     "return": [{
         "returnnum": "96",
         "date": "2014-03-23"
     }, {
-        "returnnum": "441",
+        "returnnum": "81",
         "date": "2014-03-24"
     },{
-        "returnnum": "96",
+        "returnnum": "26",
         "date": "2014-03-23"
     }, {
-        "returnnum": "441",
+        "returnnum": "41",
         "date": "2014-03-24"
     }]
 }

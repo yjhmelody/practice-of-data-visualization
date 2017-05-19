@@ -93,6 +93,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
         level = 14
     }
     this.map.centerAndZoom(center, level)
+    
     for (var i = 0; i < length; i++) {
         // 根据data创建相应的标注
         var marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))

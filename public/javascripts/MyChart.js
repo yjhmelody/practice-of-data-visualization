@@ -112,20 +112,30 @@ MyChart.prototype.init = function () {
  * get the data and update chart
  */
 MyChart.prototype.update = function (data) {
+    // 增加一些断言
+    if (data.rental.length !== data.return.length) {
+        throw Error('数据长度不一致')
+    }
     // 绑定当前作用域
     var that = this;
     // 填入数据        
     var dates = [];
     var rentalnum = [];
     var returnnum = [];
-    // 增加一些断言
-    if(data.rental.length !== data.return.length){
-        throw Error('数据长度不一致')
-    }
-    for (var i = 0; i < data.rental.length; i++) {
-        dates.push(data.rental[i].date);
-        rentalnum.push(data.rental[i].rentalnum);
-        returnnum.push(data.return[i].returnnum);
+
+    //显示各个时间段的情况
+    if (data.rental.length === 1) {
+        for (var i = 0; i < data.rental.length; i++) {
+            dates.push(data.rental[i].time)
+            rentalnum.push(data.rental[i].rentalnum)
+            returnnum.push(data.return[i].returnnum)
+        }
+    } else {
+        for (var i = 0; i < data.rental.length; i++) {
+            dates.push(data.rental[i].date)
+            rentalnum.push(data.rental[i].rentalnum)
+            returnnum.push(data.return[i].returnnum)
+        }
     }
 
     that.chart.setOption({
