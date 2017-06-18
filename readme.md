@@ -17,3 +17,5 @@
 npm install
 npm start
 ```
+
+[功能设计](./功能设计.md)
