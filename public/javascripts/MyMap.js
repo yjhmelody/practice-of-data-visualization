@@ -96,10 +96,8 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
         let content = '站点名：' + data[i].stationName
         // console.log(content)
         this.map.addOverlay(marker)
-        //绑定当前作用域
-        let that = this
-        marker.addEventListener('click', function (e) {
-            that.openInfo(content, e)
+        marker.addEventListener('click', (e) => {
+            this.openInfo(content, e)
             $('#stationName').val(data[i].stationName)
         })
         // 给Marker添加回调
