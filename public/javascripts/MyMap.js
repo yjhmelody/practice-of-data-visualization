@@ -100,6 +100,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
         let that = this
         marker.addEventListener('click', function (e) {
             that.openInfo(content, e)
+            $('#stationName').val(data[i].stationName)
         })
         // 给Marker添加回调
         if (arguments.length === 3) {
@@ -118,7 +119,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
  * @param {any} e 事件
  */
 MyMap.prototype.openInfo = function (content, e) {
-    
+
     let p = e.target
     let point = new BMap.Point(p.getPosition().lng, p.getPosition().lat)
     let infoWindow = new BMap.InfoWindow(content, infoWindowOptions)

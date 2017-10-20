@@ -15,8 +15,6 @@ window.addEventListener('load', function () {
         .then((data) => {
             // 设置坐标点
             map.setMarkers(data, 'click', (e) => {
-                // $('#stationName').append()
-                console.log(e)
                 // 给每个Marker设置相应的url
                 let url = 'test/data2.json'
                 $.get(url).done((data) => {
