@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "http-server -a -c10",
-    "test": "node ./bin/ww"
+    "test": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

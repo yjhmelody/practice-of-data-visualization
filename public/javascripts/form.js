@@ -6,7 +6,7 @@ $('.form>button').click(formSearch)
  * @param {any} e 
  */
 function formSearch(e) {
-    let url = '/users'
+    let url = config.port + '/api/stationRent_Return'
     let query = {}
     $('.form>').each(function (index, elem) {
         if (elem.name) {
@@ -16,6 +16,6 @@ function formSearch(e) {
 
     $.get(url, query, function (data) {
         console.log(url, query, data)
+        chart.update(data)
     })
-
 }

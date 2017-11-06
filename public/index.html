@@ -12,8 +12,9 @@
         }
 
         body {
-            height: 100%;
+            height: 110%;
             width: 100%;
+            min-width: 1000px;
             margin: 0px;
             padding: 0px;
             border: 0px;
@@ -81,21 +82,23 @@
         <span>自行车信息查询图</<span>
     </div>
     <div id="container">
-
     </div>
-    <div id="middle">
-        <div class="form">
-            <label for="startTime">开始时间：</label>
-            <input type="date" name="startTime" value="2014-04-01">
-            <label for="endTime">结束时间：</label>
-            <input type="date" name="endTime" value="2014-05-31">
-            <label for="stationName">站点名称：</label>
-            <input type="text" name="stationName" id="stationName" placeholder="站点名称">
-            <button type="button">搜索</button>
+
+    <div>
+        <div id="middle">
+            <div class="form">
+                <label for="startTime">开始时间：</label>
+                <input type="date" name="startTime" value="2014-04-01">
+                <label for="endTime">结束时间：</label>
+                <input type="date" name="endTime" value="2014-05-31">
+                <label for="stationName">站点名称：</label>
+                <input type="text" name="stationName" id="stationName" placeholder="站点名称">
+                <button type="button">搜索</button>
+            </div>
         </div>
     </div>
-    <div id="chart">
 
+    <div id="chart">
     </div>
 
     <script src="javascripts/MyMap.js"></script>

@@ -1,3 +1,7 @@
+const config = {
+    port:'http://118.89.186.225:8080'
+}
+
 window.addEventListener('load', function () {
     let map = new MyMap('container')
     map.init()
@@ -7,7 +11,7 @@ window.addEventListener('load', function () {
     // url根据id返回经纬度
     new Promise((res, rej) => {
             // 改成url
-            let url = 'test/data.json'
+            let url = config.port + '/api/stationAll'
             $.get(url).done((data) => {
                 res(data)
             })
@@ -16,9 +20,9 @@ window.addEventListener('load', function () {
             // 设置坐标点
             map.setMarkers(data, 'click', (e) => {
                 // 给每个Marker设置相应的url
-                let url = 'test/data2.json'
-                $.get(url).done((data) => {
-                    chart.update(data)
+                let url = config.port + '/api/stationInfo?stationID=' + data[i].stationId
+                $.get(url).done((chartData) => {
+                    chart.update(chartData)
                 })
             })
         })
