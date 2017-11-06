@@ -1,7 +1,7 @@
 /**
  * 默认图表样式
  */
-var chartOptions = {
+let chartOptions = {
     title: {
         text: '自行车租还量'
     },
@@ -113,30 +113,27 @@ MyChart.prototype.init = function () {
  */
 MyChart.prototype.update = function (data) {
     // 增加一些断言
-    if (data.rental.length !== data.return.length) {
-        throw Error('数据长度不一致')
-    }
+    // if (data.rental.length !== data.return.length) {
+    //     throw Error('数据长度不一致')
+    // }
     // 绑定当前作用域
-    var that = this;
+    let that = this;
     // 填入数据        
-    var dates = [];
-    var rentalnum = [];
-    var returnnum = [];
-
+    let dates = [];
+    let rentalnum = [];
+    let returnnum = [];
+    console.log(data)
+    // console.log(returnnum)
+    console.log(data.rental.length)
+    console.log(data.return.length)
     //显示某天的各个时间段的情况
-    if (data.rental.length === 1) {
-        for (var i = 0; i < data.rental.length; i++) {
-            dates.push(data.rental[i].time)
-            rentalnum.push(data.rental[i].rentalnum)
-            returnnum.push(data.return[i].returnnum)
-        }
-    } else {
-        for (var i = 0; i < data.rental.length; i++) {
-            dates.push(data.rental[i].date)
-            rentalnum.push(data.rental[i].rentalnum)
-            returnnum.push(data.return[i].returnnum)
-        }
+    let len = data.rental.length > data.return.length ? data.rental.length : data.return.length
+    for (let i = 0; i < len; i++) {
+        dates.push(data.rental[i].time)
+        rentalnum.push(data.rental[i] ? data.rental[i].rentalnum : 0)
+        returnnum.push(data.return[i] ? data.return[i].returnnum : 0)
     }
+    console.log(dates)
     
     //填充数据
     that.chart.setOption({

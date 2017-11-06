@@ -1,11 +1,12 @@
 const config = {
-    port:'http://118.89.186.225:8080'
+    port: 'http://118.89.186.225:8080'
 }
 
+let map = new MyMap('container')
+let chart = new MyChart("chart", chartOptions)
+
 window.addEventListener('load', function () {
-    let map = new MyMap('container')
     map.init()
-    let chart = new MyChart("chart", chartOptions)
     chart.init()
     // 加载时候获取所有点的坐标跟名称
     // url根据id返回经纬度
@@ -18,12 +19,12 @@ window.addEventListener('load', function () {
         })
         .then((data) => {
             // 设置坐标点
-            map.setMarkers(data, 'click', (e) => {
-                // 给每个Marker设置相应的url
-                let url = config.port + '/api/stationInfo?stationID=' + data[i].stationId
-                $.get(url).done((chartData) => {
-                    chart.update(chartData)
-                })
-            })
+            markers = map.setMarkers(JSON.parse(data))
+            // markers.forEach(function (elem, i) {
+            //     let url = config.port + '/api/stationRent_Return'
+            //     elem.addEventListener('click', function (e) {
+            //         $.get()
+            //     })
+            // })
         })
 })

@@ -65,10 +65,11 @@ MyMap.prototype.init = function init() {
  * @param {any} data 坐标相关数据
  * @param {string} event 事件名称
  * @param {function} callback 事件回调
+ * @returns {Array} markers数组
  */
 
 MyMap.prototype.setMarkers = function (data, event, callback) {
-    if (typeof data != 'object') {
+    if (typeof data !== 'object') {
         throw TypeError('类型错误')
     }
     let length = data.length
@@ -89,16 +90,17 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     }
     this.map.centerAndZoom(center, level)
 
+    let markers = []
     for (let i = 0; i < length; i++) {
         // 根据data创建相应的标注
         let marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))
+        markers.push(marker)
         // 块级作用域
         let content = '站点名：' + data[i].stationName
-        // console.log(content)
         this.map.addOverlay(marker)
         marker.addEventListener('click', (e) => {
             this.openInfo(content, e)
-            $('#stationName').val(data[i].stationName)
+            $('#stationName').val(data[i].stationName).attr("stationID", data[i].stationID)
         })
         // 给Marker添加回调
         if (arguments.length === 3) {
@@ -109,6 +111,9 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
             }
         }
     }
+    this.map.markers = markers
+    this.map.markers.data = data
+    return markers
 }
 
 /**
