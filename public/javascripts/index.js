@@ -1,7 +1,3 @@
-const config = {
-    port: 'http://118.89.186.225:8080'
-}
-
 let map = new MyMap('container')
 let chart = new MyChart("chart", chartOptions)
 
