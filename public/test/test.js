@@ -1,5 +1,5 @@
 /**
- * 
+ * 绘制海量点
  * @param {Array} points 点数组
  */
 function addMarkers(points) {
@@ -17,7 +17,7 @@ function addMarkers(points) {
 }
 
 /**
- * 
+ * 根据关联点绘制弧线
  * @param {Array} relation 关联点数组
  */
 function addCurvelines(relation) {
@@ -45,7 +45,7 @@ function addCurvelines(relation) {
 }
 
 /**
- * 
+ * 计算颜色
  * @param {Number} weight 
  * @returns 颜色插值
  */
@@ -58,7 +58,7 @@ let getColor = (function (weight) {
 })()
 
 /**
- * 
+ * 计算线条粗细
  * @param {Number} weight 
  * @returns 线条粗细 
  */

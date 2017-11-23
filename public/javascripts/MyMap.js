@@ -6,7 +6,7 @@ let infoWindowOptions = {
 };
 
 /**
- * 
+ * 封装BMap类
  * @class MyMap
  * @param {string} id 
  */
@@ -61,7 +61,7 @@ MyMap.prototype.init = function init() {
 
 /**
  * 
- * 
+ * 设置坐标并且注册回调函数
  * @param {any} data 坐标相关数据
  * @param {string} event 事件名称
  * @param {function} callback 事件回调
