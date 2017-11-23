@@ -32,8 +32,9 @@
 <script type="text/javascript">
     // 百度地图API功能
     var map = new BMap.Map("container");
-    map.centerAndZoom(new BMap.Point(118.454, 32.955), 6);
+    map.centerAndZoom(new BMap.Point(120.404, 29.915), 11);
     map.enableScrollWheelZoom();
+
     // var beijingPosition = new BMap.Point(116.432045, 39.910683),
     //     hangzhouPosition = new BMap.Point(120.129721, 30.314429),
     //     taiwanPosition = new BMap.Point(121.491121, 25.127053);
@@ -46,8 +47,17 @@
     // }); //创建弧线对象
     // map.addOverlay(curve); //添加到地图中
     // curve.enableEditing(); //开启编辑功能
-    $.get("http://118.89.186.225:8080/api/stationLine?stationID=1210&startTime=2014-03-23&endTime=2014-03-23")
+
+    // 静态数据测试
+    $.get("http://118.89.186.225:8080/api/stationAll")
         .done((data) => {
             console.log(data)
+            addMarkers(JSON.parse(data))
+        })
+
+    $.get("/test/data.json")
+        .done((data) => {
+            console.log(data)
+            addCurvelines(data.line)
         })
 </script>

@@ -1,32 +1,501 @@
-{
-    "stationId": 1210,
+[{
+    "stationID": "1200",
+    "stationName": "秋涛支路清江路口",
+    "longiTude": "120.202832",
+    "latiTude": "30.248621"
+}, {
+    "stationID": "1201",
+    "stationName": "近江食品市场二",
+    "longiTude": "120.202691",
+    "latiTude": "30.247982"
+}, {
+    "stationID": "1202",
+    "stationName": "秋涛支路",
+    "longiTude": "120.201313",
+    "latiTude": "30.246672"
+}, {
+    "stationID": "1203",
+    "stationName": "近江加油站",
+    "longiTude": "120.200949",
+    "latiTude": "30.245774"
+}, {
+    "stationID": "1204",
+    "stationName": "秋涛支路南口",
+    "longiTude": "120.200407",
+    "latiTude": "30.24515"
+}, {
+    "stationID": "1205",
+    "stationName": "石贯子巷",
+    "longiTude": "120.175826",
+    "latiTude": "30.261408"
+}, {
+    "stationID": "1206",
+    "stationName": "延安路解放路口",
+    "longiTude": "120.170548",
+    "latiTude": "30.253535"
+}, {
+    "stationID": "1207",
+    "stationName": "莫邪塘社区",
+    "longiTude": "120.195792",
+    "latiTude": "30.247404"
+}, {
+    "stationID": "1208",
+    "stationName": "之江路望江东路口",
+    "longiTude": "120.204579",
+    "latiTude": "30.230439"
+}, {
+    "stationID": "1209",
+    "stationName": "江韵园",
+    "longiTude": "120.210189",
+    "latiTude": "30.234839"
+}, {
+    "stationID": "1210",
     "stationName": "之江路九四五号",
-    "longiTude": 120.213257,
-    "latiTude": 30.237366,
-    "rental": [{
-        "rentalnum": "18",
-        "date": "2014-03-23"
-    }, {
-        "rentalnum": "76",
-        "date": "2014-03-24"
-    }, {
-        "rentalnum": "88",
-        "date": "2014-03-25"
-    }, {
-        "rentalnum": "36",
-        "date": "2014-03-26"
-    }],
-    "return": [{
-        "returnnum": "96",
-        "date": "2014-03-23"
-    }, {
-        "returnnum": "81",
-        "date": "2014-03-24"
-    },{
-        "returnnum": "26",
-        "date": "2014-03-23"
-    }, {
-        "returnnum": "41",
-        "date": "2014-03-24"
-    }]
-}
+    "longiTude": "120.213257",
+    "latiTude": "30.237366"
+}, {
+    "stationID": "1211",
+    "stationName": "南山路二一八-五号",
+    "longiTude": "120.166751",
+    "latiTude": "30.250314"
+}, {
+    "stationID": "1212",
+    "stationName": "清江路二九二号",
+    "longiTude": "120.208724",
+    "latiTude": "30.243684"
+}, {
+    "stationID": "1213",
+    "stationName": "清江路三四六号",
+    "longiTude": "120.211868",
+    "latiTude": "30.241399"
+}, {
+    "stationID": "1214",
+    "stationName": "钱江时代公寓二",
+    "longiTude": "120.212743",
+    "latiTude": "30.240743"
+}, {
+    "stationID": "1215",
+    "stationName": "新工社区",
+    "longiTude": "120.183539",
+    "latiTude": "30.227124"
+}, {
+    "stationID": "1216",
+    "stationName": "南星水厂",
+    "longiTude": "120.179483",
+    "latiTude": "30.219275"
+}, {
+    "stationID": "1217",
+    "stationName": "延安路解放路口",
+    "longiTude": "120.170548",
+    "latiTude": "30.253535"
+}, {
+    "stationID": "1218",
+    "stationName": "珊圆弄九八号",
+    "longiTude": "120.208826",
+    "latiTude": "30.236375"
+}, {
+    "stationID": "1219",
+    "stationName": "庆春路九号",
+    "longiTude": "120.192861",
+    "latiTude": "30.263236"
+}, {
+    "stationID": "1220",
+    "stationName": "庆春路二五号",
+    "longiTude": "120.189945",
+    "latiTude": "30.263587"
+}, {
+    "stationID": "1221",
+    "stationName": "高官弄",
+    "longiTude": "120.190464",
+    "latiTude": "30.256674"
+}, {
+    "stationID": "1222",
+    "stationName": "大学路",
+    "longiTude": "120.189494",
+    "latiTude": "30.260257"
+}, {
+    "stationID": "1223",
+    "stationName": "万隆珠宝",
+    "longiTude": "120.171023",
+    "latiTude": "30.256724"
+}, {
+    "stationID": "1224",
+    "stationName": "学士路九二号",
+    "longiTude": "120.167905",
+    "latiTude": "30.261131"
+}, {
+    "stationID": "1225",
+    "stationName": "复兴大桥一",
+    "longiTude": "120.181639",
+    "latiTude": "30.219205"
+}, {
+    "stationID": "1226",
+    "stationName": "复兴大桥二",
+    "longiTude": "120.18262",
+    "latiTude": "30.219439"
+}, {
+    "stationID": "1227",
+    "stationName": "复兴大桥三",
+    "longiTude": "120.182259",
+    "latiTude": "30.220321"
+}, {
+    "stationID": "1228",
+    "stationName": "钱江路南口",
+    "longiTude": "120.184822",
+    "latiTude": "30.223223"
+}, {
+    "stationID": "1229",
+    "stationName": "直大方伯解放路口",
+    "longiTude": "120.18513",
+    "latiTude": "30.256288"
+}, {
+    "stationID": "1230",
+    "stationName": "马市街九十号",
+    "longiTude": "120.182951",
+    "latiTude": "30.258955"
+}, {
+    "stationID": "1231",
+    "stationName": "江城路四十六—四十八号",
+    "longiTude": "120.180848",
+    "latiTude": "30.237202"
+}, {
+    "stationID": "1232",
+    "stationName": "清泰街站前路路口",
+    "longiTude": "120.186858",
+    "latiTude": "30.252466"
+}, {
+    "stationID": "1233",
+    "stationName": "望江门外",
+    "longiTude": "120.191147",
+    "latiTude": "30.236294"
+}, {
+    "stationID": "1234",
+    "stationName": "秋涛路二八九-二号",
+    "longiTude": "120.189949",
+    "latiTude": "30.235275"
+}, {
+    "stationID": "1235",
+    "stationName": "长途汽车南站对面",
+    "longiTude": "120.195956",
+    "latiTude": "30.241336"
+}, {
+    "stationID": "1236",
+    "stationName": "秋涛路四七九号",
+    "longiTude": "120.199789",
+    "latiTude": "30.244901"
+}, {
+    "stationID": "1237",
+    "stationName": "秋涛路三六八号",
+    "longiTude": "120.209042",
+    "latiTude": "30.244129"
+}, {
+    "stationID": "1238",
+    "stationName": "秋涛路A",
+    "longiTude": "120.188549",
+    "latiTude": "30.233551"
+}, {
+    "stationID": "1239",
+    "stationName": "二凉亭加油站",
+    "longiTude": "120.186041",
+    "latiTude": "30.230689"
+}, {
+    "stationID": "1240",
+    "stationName": "秋涛路B",
+    "longiTude": "120.163345",
+    "latiTude": "30.299359"
+}, {
+    "stationID": "1241",
+    "stationName": "木材市场",
+    "longiTude": "120.188267",
+    "latiTude": "30.232233"
+}, {
+    "stationID": "1242",
+    "stationName": "十五奎巷九九-一号",
+    "longiTude": "120.175402",
+    "latiTude": "30.242288"
+}, {
+    "stationID": "1243",
+    "stationName": "四牌楼一七号",
+    "longiTude": "120.175322",
+    "latiTude": "30.242218"
+}, {
+    "stationID": "1244",
+    "stationName": "凤山路一三七号",
+    "longiTude": "120.178929",
+    "latiTude": "30.229534"
+}, {
+    "stationID": "1245",
+    "stationName": "八路鼓楼终点站",
+    "longiTude": "120.178052",
+    "latiTude": "30.2426"
+}, {
+    "stationID": "1246",
+    "stationName": "河坊街五四十号",
+    "longiTude": "120.165994",
+    "latiTude": "30.245526"
+}, {
+    "stationID": "1247",
+    "stationName": "河坊街四七二号",
+    "longiTude": "120.167178",
+    "latiTude": "30.245548"
+}, {
+    "stationID": "1248",
+    "stationName": "河坊街四宜路口",
+    "longiTude": "120.168191",
+    "latiTude": "30.245228"
+}, {
+    "stationID": "1249",
+    "stationName": "杭四中分校",
+    "longiTude": "120.168191",
+    "latiTude": "30.245228"
+}, {
+    "stationID": "1250",
+    "stationName": "庆春路三五号",
+    "longiTude": "120.189237",
+    "latiTude": "30.263416"
+}, {
+    "stationID": "1251",
+    "stationName": "庆春路七三号",
+    "longiTude": "120.18557",
+    "latiTude": "30.263357"
+}, {
+    "stationID": "1252",
+    "stationName": "庆春路八七号",
+    "longiTude": "120.183255",
+    "latiTude": "30.263408"
+}, {
+    "stationID": "1253",
+    "stationName": "西湖时代广场一",
+    "longiTude": "120.167394",
+    "latiTude": "30.263969"
+}, {
+    "stationID": "1254",
+    "stationName": "六公园二",
+    "longiTude": "120.165707",
+    "latiTude": "30.263306"
+}, {
+    "stationID": "1255",
+    "stationName": "望江门二",
+    "longiTude": "120.191589",
+    "latiTude": "30.237155"
+}, {
+    "stationID": "1256",
+    "stationName": "庆春路一六七号",
+    "longiTude": "120.17521",
+    "latiTude": "30.263712"
+}, {
+    "stationID": "1257",
+    "stationName": "庆春路一九九号",
+    "longiTude": "120.171931",
+    "latiTude": "30.263922"
+}, {
+    "stationID": "1258",
+    "stationName": "之江路三一二号",
+    "longiTude": "120.152261",
+    "latiTude": "30.206128"
+}, {
+    "stationID": "1259",
+    "stationName": "之江路钱江大桥",
+    "longiTude": "120.146338",
+    "latiTude": "30.204724"
+}, {
+    "stationID": "1260",
+    "stationName": "之江路六和塔",
+    "longiTude": "120.141539",
+    "latiTude": "30.20291"
+}, {
+    "stationID": "1261",
+    "stationName": "杭州市公安局二",
+    "longiTude": "120.173097",
+    "latiTude": "30.24803"
+}, {
+    "stationID": "1262",
+    "stationName": "吴山通宝城二",
+    "longiTude": "120.170822",
+    "latiTude": "30.246578"
+}, {
+    "stationID": "1263",
+    "stationName": "河坊街五五四号",
+    "longiTude": "120.179093",
+    "latiTude": "30.245895"
+}, {
+    "stationID": "1264",
+    "stationName": "孔庙",
+    "longiTude": "120.168736",
+    "latiTude": "30.24703"
+}, {
+    "stationID": "1265",
+    "stationName": "西湖大道二五二号",
+    "longiTude": "120.170918",
+    "latiTude": "30.251951"
+}, {
+    "stationID": "1266",
+    "stationName": "涌金广场",
+    "longiTude": "120.166993",
+    "latiTude": "30.251257"
+}, {
+    "stationID": "1267",
+    "stationName": "章家桥西",
+    "longiTude": "120.184356",
+    "latiTude": "30.25153"
+}, {
+    "stationID": "1268",
+    "stationName": "开元路比胜庙巷口",
+    "longiTude": "120.175694",
+    "latiTude": "30.253051"
+}, {
+    "stationID": "1269",
+    "stationName": "开元路延安路口",
+    "longiTude": "120.170729",
+    "latiTude": "30.253254"
+}, {
+    "stationID": "1270",
+    "stationName": "开元路七八-一十号",
+    "longiTude": "120.168992",
+    "latiTude": "30.253667"
+}, {
+    "stationID": "1271",
+    "stationName": "鸥江路近江北路口",
+    "longiTude": "120.207478",
+    "latiTude": "30.242413"
+}, {
+    "stationID": "1272",
+    "stationName": "之江路九三四号",
+    "longiTude": "120.212022",
+    "latiTude": "30.23636"
+}, {
+    "stationID": "1273",
+    "stationName": "之江路衢江路口一",
+    "longiTude": "120.212131",
+    "latiTude": "30.235993"
+}, {
+    "stationID": "1274",
+    "stationName": "衢江路口",
+    "longiTude": "120.211644",
+    "latiTude": "30.236461"
+}, {
+    "stationID": "1275",
+    "stationName": "延安路一七六号",
+    "longiTude": "120.171213",
+    "latiTude": "30.251873"
+}, {
+    "stationID": "1276",
+    "stationName": "西湖大道佑圣观路口",
+    "longiTude": "120.182445",
+    "latiTude": "30.251164"
+}, {
+    "stationID": "1277",
+    "stationName": "梅花碑",
+    "longiTude": "120.18166",
+    "latiTude": "30.248606"
+}, {
+    "stationID": "1278",
+    "stationName": "岳王路二二号",
+    "longiTude": "120.169479",
+    "latiTude": "30.260317"
+}, {
+    "stationID": "1279",
+    "stationName": "平海路五号",
+    "longiTude": "120.177263",
+    "latiTude": "30.259852"
+}, {
+    "stationID": "1280",
+    "stationName": "解放路中河路口",
+    "longiTude": "120.179284",
+    "latiTude": "30.256124"
+}, {
+    "stationID": "1281",
+    "stationName": "浙二医院南",
+    "longiTude": "120.18331",
+    "latiTude": "30.256007"
+}, {
+    "stationID": "1282",
+    "stationName": "青年路开元路口",
+    "longiTude": "120.175323",
+    "latiTude": "30.253449"
+}, {
+    "stationID": "1283",
+    "stationName": "清吟街三号",
+    "longiTude": "120.185199",
+    "latiTude": "30.259407"
+}, {
+    "stationID": "1284",
+    "stationName": "长生路五四号",
+    "longiTude": "120.166881",
+    "latiTude": "30.262722"
+}, {
+    "stationID": "1285",
+    "stationName": "解放路一七八",
+    "longiTude": "120.174965",
+    "latiTude": "30.256311"
+}, {
+    "stationID": "1286",
+    "stationName": "浙江电信",
+    "longiTude": "120.170569",
+    "latiTude": "30.254455"
+}, {
+    "stationID": "1287",
+    "stationName": "河坊街四六一-四六三号前",
+    "longiTude": "120.166705",
+    "latiTude": "30.245236"
+}, {
+    "stationID": "1288",
+    "stationName": "之江路九六一号",
+    "longiTude": "120.213715",
+    "latiTude": "30.237772"
+}, {
+    "stationID": "1289",
+    "stationName": "之江路清江路口",
+    "longiTude": "120.215129",
+    "latiTude": "30.238887"
+}, {
+    "stationID": "1290",
+    "stationName": "行知幼儿园",
+    "longiTude": "120.17552",
+    "latiTude": "30.261318"
+}, {
+    "stationID": "1291",
+    "stationName": "清江路二五六号",
+    "longiTude": "120.205588",
+    "latiTude": "30.2454"
+}, {
+    "stationID": "1292",
+    "stationName": "教工路塘河路口",
+    "longiTude": "120.141548",
+    "latiTude": "30.299944"
+}, {
+    "stationID": "1293",
+    "stationName": "钱塘人家",
+    "longiTude": "120.209321",
+    "latiTude": "30.243232"
+}, {
+    "stationID": "1294",
+    "stationName": "涌金饭店",
+    "longiTude": "120.169029",
+    "latiTude": "30.249627"
+}, {
+    "stationID": "1295",
+    "stationName": "清江路二十八号",
+    "longiTude": "120.204077",
+    "latiTude": "30.247545"
+}, {
+    "stationID": "1296",
+    "stationName": "望江路六八号",
+    "longiTude": "120.188125",
+    "latiTude": "30.240104"
+}, {
+    "stationID": "1297",
+    "stationName": "中河中路二四十号",
+    "longiTude": "120.178658",
+    "latiTude": "30.261817"
+}, {
+    "stationID": "1298",
+    "stationName": "中河中路二三十号",
+    "longiTude": "120.178673",
+    "latiTude": "30.261216"
+}, {
+    "stationID": "1299",
+    "stationName": "中河中路六八号",
+    "longiTude": "120.179417",
+    "latiTude": "30.248192"
+}]

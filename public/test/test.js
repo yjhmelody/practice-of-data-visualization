@@ -2,18 +2,17 @@
  * 
  * @param {Array} points 点数组
  */
-function addMarker(points) {
+function addMarkers(points) {
     points = points.map(function (point) {
         return new BMap.Point(point.longiTude, point.latiTude)
     })
 
+    //构建海量点对象
     points = new BMap.PointCollection(points, {
         shape: BMAP_POINT_SHAPE_CIRCLE,
         size: BMAP_POINT_SIZE_BIG,
         color: '#1976d2'
     })
-    //构建海量点对象
-    points = new BMap.PointCollection(BMapPoints, options)
     map.addOverlay(points)
 }
 
@@ -22,15 +21,15 @@ function addMarker(points) {
  * @param {Array} relation 关联点数组
  */
 function addCurvelines(relation) {
-    let nums = relation.map((elem) => elem.num)
+    let nums = relation.map((elem) => elem.bikeNum)
 
     let maxValue = Math.max(...nums)
 
     relation.forEach((elem) => {
-        let fromPos = getPosition(elem.from)
-        let toPos = getPosition(elem.to)
+        let fromPos = getPosition(relation, elem.leaseStation)
+        let toPos = getPosition(relation, elem.returnStation)
         //求权重（当前值除以最大值）
-        let weight = (elem.num / maxValue).toFixed(2)
+        let weight = (elem.bikeNum / maxValue).toFixed(2)
         fromPos = new BMap.Point(fromPos.longiTude, fromPos.latiTude)
         toPos = new BMap.Point(toPos.longiTude, toPos.latiTude)
 
@@ -70,7 +69,13 @@ let getStrokeWeight = (function (weight) {
     }
 })()
 
-function getPosition(id) {
+/**
+ * 
+ * @param {Array} points 站点数组
+ * @param {String} id 站点ID
+ * @returns 站点元素
+ */
+function getPosition(points, id) {
     for (let i = 0; i < points.length; i++) {
         if (id === points[i].id) {
             return points[i]
