@@ -4,7 +4,7 @@
  */
 function addMarker(points) {
     points = points.map(function (point) {
-        return new BMap.Point(point.lng, point.lat)
+        return new BMap.Point(point.longiTude, point.latiTude)
     })
 
     points = new BMap.PointCollection(points, {
@@ -31,8 +31,8 @@ function addCurvelines(relation) {
         let toPos = getPosition(elem.to)
         //求权重（当前值除以最大值）
         let weight = (elem.num / maxValue).toFixed(2)
-        fromPos = new BMap.Point(fromPos.lng, fromPos.lat)
-        toPos = new BMap.Point(toPos.lng, toPos.lat)
+        fromPos = new BMap.Point(fromPos.longiTude, fromPos.latiTude)
+        toPos = new BMap.Point(toPos.longiTude, toPos.latiTude)
 
         //根据权重取颜色
         //根据权重取弧线粗细大小

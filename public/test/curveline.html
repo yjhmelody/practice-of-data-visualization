@@ -34,16 +34,20 @@
     var map = new BMap.Map("container");
     map.centerAndZoom(new BMap.Point(118.454, 32.955), 6);
     map.enableScrollWheelZoom();
-    var beijingPosition = new BMap.Point(116.432045, 39.910683),
-        hangzhouPosition = new BMap.Point(120.129721, 30.314429),
-        taiwanPosition = new BMap.Point(121.491121, 25.127053);
-    var points = [beijingPosition, hangzhouPosition, taiwanPosition];
+    // var beijingPosition = new BMap.Point(116.432045, 39.910683),
+    //     hangzhouPosition = new BMap.Point(120.129721, 30.314429),
+    //     taiwanPosition = new BMap.Point(121.491121, 25.127053);
+    // var points = [beijingPosition, hangzhouPosition, taiwanPosition];
 
-    var curve = new BMapLib.CurveLine(points, {
-        strokeColor: "red",
-        strokeWeight: 10,
-        strokeOpacity: 0.5
-    }); //创建弧线对象
-    map.addOverlay(curve); //添加到地图中
-    curve.enableEditing(); //开启编辑功能
+    // var curve = new BMapLib.CurveLine(points, {
+    //     strokeColor: "red",
+    //     strokeWeight: 10,
+    //     strokeOpacity: 0.5
+    // }); //创建弧线对象
+    // map.addOverlay(curve); //添加到地图中
+    // curve.enableEditing(); //开启编辑功能
+    $.get("http://118.89.186.225:8080/api/stationLine?stationID=1210&startTime=2014-03-23&endTime=2014-03-23")
+        .done((data) => {
+            console.log(data)
+        })
 </script>
