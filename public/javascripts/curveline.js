@@ -30,13 +30,18 @@ function addCurvelines(relation, points) {
         let toPos = getPosition(points, elem.returnStation)
         //求权重（当前值除以最大值）
         let weight = (elem.bikeNum / maxValue).toFixed(2)
-        console.log(weight)
+        // console.log(weight)
         if(fromPos && toPos){
             fromPos = new BMap.Point(fromPos.longiTude, fromPos.latiTude)
             toPos = new BMap.Point(toPos.longiTude, toPos.latiTude)
             //根据权重取颜色
             //根据权重取弧线粗细大小
             let curveline = new BMapLib.CurveLine([fromPos, toPos], {
+                strokeOpacity: 0.8,
+                strokeColor: getColor(weight),
+                strokeWeight: getStrokeWeight(weight)
+            })
+            addArrow(curveline, {
                 strokeOpacity: 0.8,
                 strokeColor: getColor(weight),
                 strokeWeight: getStrokeWeight(weight)
@@ -52,8 +57,8 @@ function addCurvelines(relation, points) {
  * @returns 颜色插值
  */
 let getColor = (function () {
-    let left = '#00FF00'
-    let right = '#FF0000'
+    let left = '#ffeb3b'
+    let right = '#f44336'
     let func = d3.interpolate(left, right)
     return function (weight) {
         return func(weight)
@@ -88,4 +93,46 @@ function getPosition(points, id) {
     }
 }
 
-function addArrow()
+function addArrow(lines, style) {
+    let r = 14
+    let angle = Math.PI / 7
+    let points = lines.getPath()
+    let middle = points.length / 2
+    // console.log(points)
+    let pixelStart = map.pointToPixel(points[Math.floor(middle)]);
+    let pixelEnd = map.pointToPixel(points[Math.ceil(middle)]);
+    let pixelTemX, pixelTemY;
+    let pixelX, pixelY, pixelX1, pixelY1;
+
+    if (pixelEnd.x - pixelStart.x == 0) {
+        pixelTemX = pixelEnd.x;
+    if (pixelEnd.y > pixelStart.y) {
+        pixelTemY = pixelEnd.y - r;
+    } else {
+        pixelTemY = pixelEnd.y + r;
+    }
+        pixelX = pixelTemX - r * Math.tan(angle);
+        pixelX1 = pixelTemX + r * Math.tan(angle);
+        pixelY = pixelY1 = pixelTemY;
+    } else {
+        let delta = (pixelEnd.y - pixelStart.y) / (pixelEnd.x - pixelStart.x);
+        let param = Math.sqrt(delta * delta + 1);
+    if ((pixelEnd.x - pixelStart.x) < 0) {
+        pixelTemX = pixelEnd.x + r / param;
+        pixelTemY = pixelEnd.y + delta * r / param;
+    } else {
+        pixelTemX = pixelEnd.x - r / param;
+        pixelTemY = pixelEnd.y - delta * r / param;
+    }
+        pixelX = pixelTemX + Math.tan(angle) * r * delta / param;
+        pixelY = pixelTemY - Math.tan(angle) * r / param;
+        pixelX1 = pixelTemX - Math.tan(angle) * r * delta / param;
+        pixelY1 = pixelTemY + Math.tan(angle) * r / param;
+    }
+    let pointArrow = map.pixelToPoint(new BMap.Pixel(pixelX, pixelY));
+    let pointArrow1 = map.pixelToPoint(new BMap.Pixel(pixelX1, pixelY1));
+    let Arrow = new BMap.Polyline(
+        [pointArrow, points[Math.ceil(middle)], pointArrow1], style
+    )
+    map.addOverlay(Arrow);
+}
