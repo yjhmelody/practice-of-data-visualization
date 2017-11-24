@@ -31,35 +31,24 @@
 <script src="./test.js"></script>
 <script type="text/javascript">
     // 百度地图API功能
-    var map = new BMap.Map("container");
-    map.centerAndZoom(new BMap.Point(120.404, 29.915), 10);
-    map.enableScrollWheelZoom();
-
-    var beijingPosition = new BMap.Point(116.432045, 39.910683),
-        hangzhouPosition = new BMap.Point(120.129721, 30.314429),
-        taiwanPosition = new BMap.Point(121.491121, 25.127053);
-    var points = [beijingPosition, hangzhouPosition, taiwanPosition];
-
-    var curve = new BMapLib.CurveLine(points, {
-        strokeColor: "red",
-        strokeWeight: 10,
-        strokeOpacity: 0.5
-    }); //创建弧线对象
-    map.addOverlay(curve); //添加到地图中
-    curve.enableEditing(); //开启编辑功能
+    let map = new BMap.Map("container")
+    map.centerAndZoom(new BMap.Point(120.404, 29.915), 10)
+    map.enableScrollWheelZoom()
+    let points
 
     // 静态数据测试
     $.get("http://118.89.186.225:8080/api/stationAll")
-        .done((data) => {
-            // data = JSON.parse(data)
+        .then((data) => {
+            points = data
+            // console.log(points)
             addMarkers(data)
-            map.centerAndZoom(new BMap.Point(data[0].longiTude, data[0].latiTude), 13);
-        })
-
-    $.get("/test/data.json")
-        .done((data) => {
-            // data = JSON.parse(data)
-            console.log(data)
-            // addCurvelines(data.line)
+            map.centerAndZoom(new BMap.Point(data[0].longiTude, data[0].latiTude), 15);
+            return data;
+        }).then((data) => {
+            $.get("/test/data.json")
+                .done((data2) => {
+                    // console.log(data2)
+                    addCurvelines(data2.line, data)
+                })
         })
 </script>
