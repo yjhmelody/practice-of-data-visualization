@@ -52,8 +52,8 @@ function addCurvelines(relation, points) {
  * @returns 颜色插值
  */
 let getColor = (function () {
-    let left = '#ffeb3b'
-    let right = '#f44336'
+    let left = '#00FF00'
+    let right = '#FF0000'
     let func = d3.interpolate(left, right)
     return function (weight) {
         return func(weight)
@@ -66,9 +66,9 @@ let getColor = (function () {
  * @param {Number} weight 
  * @returns 线条粗细 
  */
-let getStrokeWeight = (function (weight) {
+let getStrokeWeight = (function () {
     let max = 10
-    return function () {
+    return function (weight) {
         return Math.round(weight * max)
     }
 })()
@@ -87,3 +87,5 @@ function getPosition(points, id) {
         }
     }
 }
+
+function addArrow()
