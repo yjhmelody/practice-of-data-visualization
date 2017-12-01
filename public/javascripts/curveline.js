@@ -4,7 +4,7 @@
  */
 function addMarkers(points) {
     points = points.map(function (point) {
-        return new BMap.Point(point.longiTude, point.latiTude)
+        return new BMap.Point(point.longitude, point.latitude)
     })
 
     //构建海量点对象
@@ -32,8 +32,8 @@ function addCurvelines(relation, points) {
         let weight = (elem.bikeNum / maxValue).toFixed(2)
         // console.log(weight)
         if(fromPos && toPos){
-            fromPos = new BMap.Point(fromPos.longiTude, fromPos.latiTude)
-            toPos = new BMap.Point(toPos.longiTude, toPos.latiTude)
+            fromPos = new BMap.Point(fromPos.longitude, fromPos.latitude)
+            toPos = new BMap.Point(toPos.longitude, toPos.latitude)
             //根据权重取颜色
             //根据权重取弧线粗细大小
             let curveline = new BMapLib.CurveLine([fromPos, toPos], {

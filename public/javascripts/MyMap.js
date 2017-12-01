@@ -74,7 +74,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     }
     let length = data.length
     // 设置Markers同时把视图移动到第一个Marker
-    let center = new BMap.Point(data[0].longiTude, data[0].latiTude)
+    let center = new BMap.Point(data[0].longitude, data[0].latitude)
     // 设置视图详细度
     let level
     if (length === 1) {
@@ -93,7 +93,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     let markers = []
     for (let i = 0; i < length; i++) {
         // 根据data创建相应的标注
-        let marker = new BMap.Marker(new BMap.Point(data[i].longiTude, data[i].latiTude))
+        let marker = new BMap.Marker(new BMap.Point(data[i].longitude, data[i].latitude))
         markers.push(marker)
         // 块级作用域
         let content = '站点名：' + data[i].stationName

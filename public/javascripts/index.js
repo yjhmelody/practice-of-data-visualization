@@ -16,12 +16,6 @@ window.addEventListener('load', function () {
         .then((data) => {
             // 设置坐标点
             markers = map.setMarkers(data)
-            // markers.forEach(function (elem, i) {
-            //     let url = config.port + '/api/stationRent_Return'
-            //     elem.addEventListener('click', function (e) {
-            //         $.get()
-            //     })
-            // })
         })
 
     

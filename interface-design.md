@@ -101,7 +101,7 @@
     "isRight":1,
     "stationID":1210,
     "stationName":"之江路九四五号",
-    "longiude":120.213257,
+    "longitude":120.213257,
     "latitude":30.237366,
     "line":
     [
