@@ -40,7 +40,7 @@
     $.get("http://118.89.186.225:8080/api/stationAll")
         .then((data) => {
             points = data
-            addMarkers(data)
+            addMarkers(points)
             map.centerAndZoom(new BMap.Point(data[0].longitude, data[0].latitude), 15);
             return data;
         }).then((data) => {

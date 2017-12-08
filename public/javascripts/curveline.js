@@ -1,19 +1,38 @@
 /**
- * 绘制海量点
+ * 返回海量点
  * @param {Array} points 点数组
  */
 function addMarkers(points) {
+    if (typeof points !== 'object') {
+        throw TypeError('类型错误')
+    }
+    let length = points.length
+    // 设置Markers同时把视图移动到第一个Marker
+    let center = new BMap.Point(points[0].longitude, points[0].latitude)
+    // 设置视图详细度
+    let level
+    if (length === 1) {
+        level = 18
+    } else if (length < 10) {
+        level = 17
+    } else if (length < 20) {
+        level = 16
+    } else if (length < 30) {
+        level = 15
+    } else {
+        level = 14
+    }
+    map.map.centerAndZoom(center, level)
     points = points.map(function (point) {
         return new BMap.Point(point.longitude, point.latitude)
     })
-
     //构建海量点对象
     points = new BMap.PointCollection(points, {
         shape: BMAP_POINT_SHAPE_CIRCLE,
         size: BMAP_POINT_SIZE_BIG,
         color: '#1976d2'
     })
-    map.addOverlay(points)
+    return points
 }
 
 /**
@@ -22,10 +41,12 @@ function addMarkers(points) {
  * @param {Array} points 全局点数组
  */
 function addCurvelines(relation, points) {
-    if(typeof relation !== 'array'){
+    if(typeof relation[0] !== 'object'){
+        console.log(relation)
         throw TypeError("不是关联点数组")
     }
-    if(typeof points !== 'array'){
+    if(typeof points[0] !== 'object'){
+        console.log(points)
         throw TypeError("不是全局点数组")
     }
     let nums = relation.map((elem) => elem.bikeNum)
@@ -51,7 +72,7 @@ function addCurvelines(relation, points) {
                 strokeColor: getColor(weight),
                 strokeWeight: getStrokeWeight(weight)
             })
-            map.addOverlay(curveline)
+            map.map.addOverlay(curveline)
         }
     })
 }
@@ -104,8 +125,8 @@ function addArrow(lines, style) {
     let points = lines.getPath()
     let middle = points.length / 2
     // console.log(points)
-    let pixelStart = map.pointToPixel(points[Math.floor(middle)]);
-    let pixelEnd = map.pointToPixel(points[Math.ceil(middle)]);
+    let pixelStart = map.map.pointToPixel(points[Math.floor(middle)]);
+    let pixelEnd = map.map.pointToPixel(points[Math.ceil(middle)]);
     let pixelTemX, pixelTemY;
     let pixelX, pixelY, pixelX1, pixelY1;
 
@@ -134,10 +155,10 @@ function addArrow(lines, style) {
         pixelX1 = pixelTemX - Math.tan(angle) * r * delta / param;
         pixelY1 = pixelTemY + Math.tan(angle) * r / param;
     }
-    let pointArrow = map.pixelToPoint(new BMap.Pixel(pixelX, pixelY));
-    let pointArrow1 = map.pixelToPoint(new BMap.Pixel(pixelX1, pixelY1));
+    let pointArrow = map.map.pixelToPoint(new BMap.Pixel(pixelX, pixelY));
+    let pointArrow1 = map.map.pixelToPoint(new BMap.Pixel(pixelX1, pixelY1));
     let Arrow = new BMap.Polyline(
         [pointArrow, points[Math.ceil(middle)], pointArrow1], style
     )
-    map.addOverlay(Arrow);
+    map.map.addOverlay(Arrow);
 }

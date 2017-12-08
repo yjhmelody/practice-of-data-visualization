@@ -1,6 +1,7 @@
 let map = new MyMap('container')
 let chart = new MyChart("chart", chartOptions)
-let points
+let globalPoints = []
+let relationPoints = []
 
 window.addEventListener('load', function () {
     map.init()
@@ -11,14 +12,22 @@ window.addEventListener('load', function () {
             // 改成url
             let url = config.port + '/api/stationAll'
             $.get(url).done((data) => {
-                points = data
+                globalPoints = data
                 res(data)
             })
         })
         .then((data) => {
             // 设置坐标点
+            let markers = addMarkers(data)
+            console.log(markers)
+            // 绘制海量点
+            // map.map.addOverlay(markers)
+            // markers.addEventListener('click', formSearch);
             markers = map.setMarkers(data)
         })
-
-    
+        .then(null, function(err){
+            if(err){
+                console.log(err)
+            }
+        })
 })

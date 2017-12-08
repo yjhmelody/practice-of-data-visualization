@@ -14,6 +14,7 @@ let infoWindowOptions = {
 function MyMap(id) {
     if (typeof id === 'string') {
         this.id = id
+        this.map = null
     } else {
         throw TypeError('id类型错误')
     }
@@ -65,7 +66,7 @@ MyMap.prototype.init = function init() {
  * @param {any} data 坐标相关数据
  * @param {string} event 事件名称
  * @param {function} callback 事件回调
- * @returns {Array} markers数组
+ * @returns {Array} circles数组
  */
 
 MyMap.prototype.setMarkers = function (data, event, callback) {
@@ -73,7 +74,7 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
         throw TypeError('类型错误')
     }
     let length = data.length
-    // 设置Markers同时把视图移动到第一个Marker
+    // 设置circles同时把视图移动到第一个circle
     let center = new BMap.Point(data[0].longitude, data[0].latitude)
     // 设置视图详细度
     let level
@@ -90,30 +91,42 @@ MyMap.prototype.setMarkers = function (data, event, callback) {
     }
     this.map.centerAndZoom(center, level)
 
-    let markers = []
+    let circles = []
     for (let i = 0; i < length; i++) {
         // 根据data创建相应的标注
-        let marker = new BMap.Marker(new BMap.Point(data[i].longitude, data[i].latitude))
-        markers.push(marker)
+        let point = new BMap.Point(data[i].longitude, data[i].latitude)
+        // let circle = new BMap.circle(point)
+        let circle = new BMap.Circle(point, 100, {
+            strokeColor: '#1d9ed7', //圆形边线颜色
+            fillColor: '#1d9ed7', //圆形填充颜色。
+            strokeWeight: 1, //圆形边线的宽度
+            fillOpacity: 1 //圆形填充的透明度
+            })
+        circles.push(circle)
+        circles.push(circle)
         // 块级作用域
         let content = '站点名：' + data[i].stationName
-        this.map.addOverlay(marker)
-        marker.addEventListener('click', (e) => {
-            this.openInfo(content, e)
+        this.map.addOverlay(circle)
+
+        circle.addEventListener('click', (e) => {
+            // this.openInfo(content, e)
             $('#stationName').val(data[i].stationName).attr("stationID", data[i].stationID)
+
+            var infoWindow = new BMap.InfoWindow(content, infoWindowOptions);  // 创建信息窗口对象 
+            this.map.openInfoWindow(infoWindow,e.point); //开启信息窗口
         })
-        // 给Marker添加回调
+        // 给circle添加回调
         if (arguments.length === 3) {
             if (typeof event === 'string' && typeof callback === 'function') {
-                marker.addEventListener(event, callback)
+                circle.addEventListener(event, callback)
             } else {
                 throw new TypeError('类型错误')
             }
         }
     }
-    this.map.markers = markers
-    this.map.markers.data = data
-    return markers
+    this.map.circles = circles
+    this.map.circles.data = data
+    return circles
 }
 
 /**
