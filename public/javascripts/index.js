@@ -1,5 +1,6 @@
 let map = new MyMap('container')
 let chart = new MyChart("chart", chartOptions)
+let points
 
 window.addEventListener('load', function () {
     map.init()
@@ -10,6 +11,7 @@ window.addEventListener('load', function () {
             // 改成url
             let url = config.port + '/api/stationAll'
             $.get(url).done((data) => {
+                points = data
                 res(data)
             })
         })

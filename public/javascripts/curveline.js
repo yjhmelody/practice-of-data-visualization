@@ -19,11 +19,16 @@ function addMarkers(points) {
 /**
  * 根据关联点绘制弧线
  * @param {Array} relation 关联点数组
- * @param {Array} points
+ * @param {Array} points 全局点数组
  */
 function addCurvelines(relation, points) {
+    if(typeof relation !== 'array'){
+        throw TypeError("不是关联点数组")
+    }
+    if(typeof points !== 'array'){
+        throw TypeError("不是全局点数组")
+    }
     let nums = relation.map((elem) => elem.bikeNum)
-
     let maxValue = Math.max(...nums)
     relation.forEach((elem) => {
         let fromPos = getPosition(points, elem.leaseStation)

@@ -40,14 +40,12 @@
     $.get("http://118.89.186.225:8080/api/stationAll")
         .then((data) => {
             points = data
-            // console.log(points)
             addMarkers(data)
             map.centerAndZoom(new BMap.Point(data[0].longitude, data[0].latitude), 15);
             return data;
         }).then((data) => {
             $.get("/test/data.json")
                 .done((data2) => {
-                    // console.log(data2)
                     addCurvelines(data2.line, data)
                 })
         })
