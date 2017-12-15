@@ -52,6 +52,10 @@ function addCurvelines(relation, points) {
     let nums = relation.map((elem) => elem.bikeNum)
     let maxValue = Math.max(...nums)
     relation.forEach((elem) => {
+        // 过滤
+        if(elem.leaseStation === elem.returnStation) {
+            return
+        }
         let fromPos = getPosition(points, elem.leaseStation)
         let toPos = getPosition(points, elem.returnStation)
         //求权重（当前值除以最大值）
@@ -83,9 +87,10 @@ function addCurvelines(relation, points) {
  * @returns 颜色插值
  */
 let getColor = (function () {
-    let left = '#ffeb3b'
+    let left = '#4caf50'
     let right = '#f44336'
     let func = d3.interpolate(left, right)
+
     return function (weight) {
         return func(weight)
     }
