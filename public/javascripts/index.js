@@ -24,10 +24,17 @@ window.addEventListener('load', function () {
             // map.map.addOverlay(markers)
             // markers.addEventListener('click', formSearch);
             markers = map.setMarkers(data)
+            let left = '#4caf50'
+            let right = '#f44336'
+            let nums = relationPoints.map((elem) => elem.bikeNum)
+            let maxValue = Math.max(...nums)
+            addGradientColor(left, right, 0, 30)
         })
-        .then(null, function(err){
-            if(err){
+        .then(null, function (err) {
+            if (err) {
                 console.log(err)
             }
         })
+
+
 })

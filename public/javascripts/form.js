@@ -28,7 +28,7 @@ function formSearch(e) {
             }
             relationPoints = data.line
             addCurvelines(relationPoints, globalPoints)    
-            
+
         }).then(null, function(err){
             if(err) {
                 console.log(err)

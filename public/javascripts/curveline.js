@@ -167,3 +167,37 @@ function addArrow(lines, style) {
     )
     map.map.addOverlay(Arrow);
 }
+
+
+function addGradientColor(color1, color2, min, max) {
+    let div = $('<div></div>')
+        .css('height', '100px')
+        .css('width', '50px')
+        .css('background', `linear-gradient(${color1}, ${color2})`)
+        .css('position', 'absolute')
+        .css('bottom', '300px')
+        .css('right', '10px')
+
+    let valueDiv = $('<div></div>')
+        .css('height', '120px')
+        .css('width', '50px')
+        .css('position', 'absolute')
+        .css('bottom', '300px')
+        .css('right', '60px')
+
+    let value = [min, (max + min)/2, max]
+    for(let i = 0; i < 3; i ++ ){
+        valueDiv.append($('<span></span>').html(value[i]).css('position', 'absolute').css('right', '20px').css('bottom', `${80 - 40 * i}px`))
+    }
+    // valueDiv.append(
+    //     $('<span></span>').html(min).css('position', 'absolute').css('right', '20px').css('bottom', '80px'))
+    //     .append(
+    //     $('<span></span>').html((min + max) / 2).css('position', 'absolute').css('right', '20px').css('bottom', '40px'))
+    //     .append(
+    //     $('<span></span>').html(max).css('position', 'absolute').css('right', '20px').css('bottom', '0px'))
+
+        
+
+    $('body').append(div)
+    $('body').append(valueDiv)
+}
